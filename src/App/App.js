@@ -31,6 +31,8 @@ function App() {
 
         saveSync(result, fileName + '.pdf');
       }
+
+      files.forEach(file => file.remove());
     });
   }
 
