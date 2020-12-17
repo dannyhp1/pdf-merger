@@ -1,25 +1,21 @@
-import { useState } from 'react';
 import Dropzone from 'react-dropzone-uploader';
 import 'react-dropzone-uploader/dist/styles.css';
 
 function FileDropZone(props) {
-    // specify upload params and url for your files
-  const getUploadParams = ({ meta }) => { return { url: 'https://httpbin.org/post' } }
+    // Called every time a file's `status` changes.
+    const handleChangeStatus = ({ meta, file }, status) => { console.log('Current status is ' + status + ' for ' + meta.name); }
   
-  // called every time a file's `status` changes
-  const handleChangeStatus = ({ meta, file }, status) => { console.log(status, meta, file) }
-  
-  // receives array of files that are done uploading when submit button is clicked
-  const handleSubmit = (files) => { console.log(files) }
- 
+    // Receives array of files when they are done uploading and submit button is clicked.
+    const handleSubmit = (files) => { props.onSubmit(files); }
 
     return (
         <div>
             <Dropzone
-                getUploadParams={getUploadParams}
+                inputContent='Click to Browse or Drag Files Here'
+                submitButtonContent='Merge Files'
                 onChangeStatus={handleChangeStatus}
                 onSubmit={handleSubmit}
-                accept=".pdf"
+                accept='.pdf'
             />
         </div>
     )
