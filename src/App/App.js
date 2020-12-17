@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import Header from '../components/Header';
+import FileDropZone from '../components/FileDropZone';
 
 const theme = createMuiTheme({
   palette: {
@@ -18,9 +20,17 @@ const theme = createMuiTheme({
 });
 
 function App() {
+  const [files, setFiles] = useState([]);
+
+  const handleSave = (files) => {
+    console.log('In handle save!')
+    console.log(files)
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Header />
+      <FileDropZone onChange={handleSave} />
     </ThemeProvider>
   );
 }
