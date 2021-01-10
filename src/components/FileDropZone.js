@@ -18,16 +18,6 @@ function FileDropZone(props) {
 
     return (
         <Grid container>
-            <Grid item xs={12} style={headingStyle}>
-                <Typography variant='h5' gutterBottom>
-                    Merging your files with ease.
-                </Typography>
-
-                <Typography variant='overline' display='block' gutterBottom>
-                    Application currently only supports .pdf file formats.
-                </Typography>
-            </Grid>
-
             <Grid item xs={12}>
                 <Dropzone
                     inputContent='Click to Browse or Drag Files Here'

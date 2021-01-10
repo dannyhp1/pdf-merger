@@ -20,7 +20,7 @@ function Header(props) {
         <AppBar position='static'>
           <Toolbar>
             <Typography variant='h6' className={classes.title}>
-              PDF Merger
+              PDF Toolkit
             </Typography>
           </Toolbar>
         </AppBar>
