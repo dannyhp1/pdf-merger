@@ -9,6 +9,10 @@ const headingStyle = {
     margin: '2%',
 };
 
+const disclaimerStyle = {
+    textAlign: 'center',
+}
+
 function FileMerger(props) {
     const [isMerging, setIsMerging] = useState(false);
 
@@ -51,7 +55,7 @@ function FileMerger(props) {
                 <FileDropZone isMerging={isMerging} onSubmit={mergeFiles} />
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} style={disclaimerStyle}>
                 <Typography variant='caption' display='block' gutterBottom>
                     Disclaimer: All files uploaded to be merged are <strong>not</strong> saved or propagated to any third-party services.
                 </Typography>
