@@ -24,7 +24,7 @@ function FileDropZone(props) {
                     submitButtonContent={props.isMerging ? 'Currently merging your files...' : 'Merge Files'}
                     onChangeStatus={handleChangeStatus}
                     onSubmit={handleSubmit}
-                    accept='.pdf,.png,.jpg'
+                    accept='.pdf,.png,.jpg,.jpeg'
                 />
             </Grid>
         </Grid>

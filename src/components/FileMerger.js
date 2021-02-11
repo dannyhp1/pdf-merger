@@ -43,7 +43,7 @@ function FileMerger(props) {
                 </Typography>
 
                 <Typography variant='overline' display='block' gutterBottom>
-                    PDF Merger currently only supports the following file formats: <strong>.pdf</strong>, <strong>.png</strong>, and <strong>.jpg</strong>.
+                    PDF Merger currently only supports the following file formats: <strong>.pdf</strong>, <strong>.png</strong>, <strong>.jpg</strong>, and <strong>.jpeg</strong>.
                 </Typography>
             </Grid>
 

@@ -30,7 +30,7 @@ async function mergePDFs(files) {
                     for (const copiedPage of copiedPages) {
                         resultPdf.addPage(copiedPage);
                     }
-                } else if (fileNames[i].endsWith('.png') || fileNames[i].endsWith('.jpg')) {
+                } else if (fileNames[i].endsWith('.png') || fileNames[i].endsWith('.jpg') || fileNames[i].endsWith('.jpeg')) {
                     // If the document is an image.
                     let image;
 
@@ -39,7 +39,7 @@ async function mergePDFs(files) {
                     
                     if (fileNames[i].endsWith('.png')) {
                         image = await resultPdf.embedPng(new Uint8Array(documentBytes));
-                    } else if (fileNames[i].endsWith('.jpg')) {
+                    } else if (fileNames[i].endsWith('.jpg') || fileNames[i].endsWith('.jpeg')) {
                         image = await resultPdf.embedJpg(new Uint8Array(documentBytes))
                     }
 
