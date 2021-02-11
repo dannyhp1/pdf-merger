@@ -17,21 +17,21 @@ function FileMerger(props) {
         setIsMerging(true);
 
         mergePDFs(files).then(result => {
-        let message = '';
+            let message = '';
 
-        if (result.errorFileNames.length !== 0) {
-            message += 'The following files could not be merged: ' + result.errorFileNames.join(', ') + '\n\n';
-        }
+            if (result.errorFileNames.length !== 0) {
+                message += 'The following files could not be merged: ' + result.errorFileNames.join(', ') + '\n\n';
+            }
 
-        if (result.pdfBytes) {
-            console.log('PDF was merged successfully.');
-            setIsMerging(false);
-            let fileName = prompt(message + 'What file name would you like to save this as? (do not include ".pdf")', 'merged_files');
+            if (result.pdfBytes) {
+                console.log('PDF was merged successfully.');
+                setIsMerging(false);
+                let fileName = prompt(message + 'What file name would you like to save this as? (do not include ".pdf")', 'merged_files');
 
-            saveSync(result.pdfBytes, fileName + '.pdf');
-        }
+                saveSync(result.pdfBytes, fileName + '.pdf');
+            }
 
-        files.forEach(file => file.remove());
+            files.forEach(file => file.remove());
         });
     }
 
@@ -43,12 +43,18 @@ function FileMerger(props) {
                 </Typography>
 
                 <Typography variant='overline' display='block' gutterBottom>
-                    PDF Merger currently only supports .pdf file formats.
+                    PDF Merger currently only supports the following file formats: <strong>.pdf</strong>, <strong>.png</strong>, and <strong>.jpg</strong>.
                 </Typography>
             </Grid>
 
             <Grid item xs={12}>
                 <FileDropZone isMerging={isMerging} onSubmit={mergeFiles} />
+            </Grid>
+
+            <Grid item xs={12}>
+                <Typography variant='caption' display='block' gutterBottom>
+                    Disclaimer: All files uploaded to be merged are <strong>not</strong> saved or propagated to any third-party services.
+                </Typography>
             </Grid>
         </Grid>
     )
