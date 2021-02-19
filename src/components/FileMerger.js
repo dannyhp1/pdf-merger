@@ -57,7 +57,7 @@ function FileMerger(props) {
 
             <Grid item xs={12} style={disclaimerStyle}>
                 <Typography variant='caption' display='block' gutterBottom>
-                    Disclaimer: All files uploaded to be merged are <strong>not</strong> saved or propagated to any third-party services.
+                    Disclaimer: All uploaded files are <strong><em>not</em></strong> saved or forwarded to any third-party services.
                 </Typography>
             </Grid>
         </Grid>
